@@ -9,7 +9,7 @@ class FavoritesController < ApplicationController
 
  def create
     @favorite = Favorite.create(favorites_params)
-    redirect_to favorites_path
+    redirect_to user_path(@favorite.user_id)
  end 
 
  def show
@@ -29,7 +29,7 @@ class FavoritesController < ApplicationController
  def destroy
     @favorite = Favorite.find(params[:id])
     @favorite.delete
-    redirect_to favorites_path
+    redirect_to user_path(@favorite.user_id)
  end 
 
  private

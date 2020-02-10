@@ -1,2 +1,6 @@
-<h1>Favorites#new</h1>
-<p>Find me in app/views/favorites/new.html.erb</p>
+<h1> Make a new favorite</h1>
+<%= form_for @favorite do |f| %>
+    <%= f.collection_select :user_id, User.all, :id, :name %><br>
+    <%= f.collection_select :song_id, Song.all, :id, :name %><br>
+    <%= f.submit %>
+<% end %>

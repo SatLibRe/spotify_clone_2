@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
    def index 
-      @songs = Songs.all
+      @songs = Song.all
+      @user = User.first 
    end 
 
    def new 
@@ -31,6 +32,8 @@ class SongsController < ApplicationController
       @song.delete
       redirect_to songs_path
    end 
+
+  
 
    private
 

@@ -1,2 +1,8 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<h1> <%= @user.name %>'s Favorites </h1>
+
+<% @user.favorites.each do |fav|%>
+<%= Song.find(fav.song_id).name %>
+<%= Genre.find(Song.find(fav.song_id).genre_id).name %>
+<%= Artist.find(Song.find(fav.song_id).artist_id).name %>
+<%= button_to "Unfavorite", fav, method: "delete"%>
+<% end %>

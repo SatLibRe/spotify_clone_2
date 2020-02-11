@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authorized, except: [:new, :create] 
+
   def index
     @users = User.all
   end
@@ -10,27 +12,27 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     session[:user_id] = @user.id
-    redirect_to user_path(@user)
+    redirect_to new_session_path
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     @user.update
     redirect_to user_path(@user)
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def destroy
-    @user = User.find(params[:id])
+    @user = current_user
     @user.delete
-    redirect_to users_path
+    redirect_to new_session_path
   end
 
   private 

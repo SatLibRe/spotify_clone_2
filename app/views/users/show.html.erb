@@ -1,5 +1,14 @@
 <h1> <%= @user.name %>'s Favorites </h1>
 
+<h4>Search by Song:</h4>
+  <%= form_tag(songs_path, method: "get") do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag "Search", name: "nil", placeholder: "enter song title"%>
+  <% end %>
+
+<br>
+<br>
+
 <% @user.favorites.each do |fav|%>
  <table>
     <tr>
@@ -10,4 +19,9 @@
     </tr>
 </table>
 <% end %>
+
+
+
+   <%= link_to 'logout', destroy_session_path, method: :delete %>
+
 

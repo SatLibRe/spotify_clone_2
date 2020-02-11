@@ -1,8 +1,8 @@
 <h1> New user signup</h1>
 <%= form_for @user do |f| %>
     
-    <label>Name:</label><br>
-    <%= f.text_field :name %><br>
+    Name <%= f.text_field :name %><br>
+    Password <%= f.text_field :password %><br>
     <%= f.submit "Create New User" %>
 
 <% end %>

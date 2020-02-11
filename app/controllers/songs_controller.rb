@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
    def index 
-      @songs = Song.all
       @user = User.first 
+      @songs = Song.search(params[:search], params[:id])
    end 
 
    def new 
@@ -33,11 +33,9 @@ class SongsController < ApplicationController
       redirect_to songs_path
    end 
 
-  
-
    private
 
    def song_params
-      params.require(:song).permit(:name, :image, :genre_id, :artist_id)
+      params.require(:song).permit(:name, :image, :genre_id, :artist_id, :search)
    end 
 end

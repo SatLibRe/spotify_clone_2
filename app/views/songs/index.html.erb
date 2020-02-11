@@ -1,3 +1,12 @@
+<h1>Songs</h1>
+<br>
+<br>
+ <h4>Search by Song:</h4>
+   <%= form_tag(songs_path, method: "get") do %>
+   <%= text_field_tag(:search, params[:search]) %>
+   <%= submit_tag "Search" %>
+   <% end %>
+
 <% @songs.each do |song| %>
    <%= song.name %>
    <table>
@@ -8,5 +17,7 @@
     </tr>
    </table>
  <% end %>
+
+
 
    

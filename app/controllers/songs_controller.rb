@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
    def index 
-      @user = User.first 
+      @user = current_user
       @songs = Song.search(params[:search], params[:id])
    end 
 

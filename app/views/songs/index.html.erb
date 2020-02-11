@@ -1,8 +1,12 @@
 <% @songs.each do |song| %>
    <%= song.name %>
-   <%= link_to song.genre.name, genre_path(song.genre_id) %>
-   <%= link_to song.artist.name, artist_path(song.artist_id) %>
-   <%= button_to 'favorite', song_favorite_path(song), method: "post" %>
+   <table>
+    <tr>
+      <%= link_to song.genre.name, genre_path(song.genre_id) %> |
+      <%= link_to song.artist.name, artist_path(song.artist_id) %> |
+      <%= button_to 'favorite', song_favorite_path(song), method: "post" %> 
+    </tr>
+   </table>
  <% end %>
 
    

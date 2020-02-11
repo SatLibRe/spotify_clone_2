@@ -1,5 +1,14 @@
 <h1> <%= @user.name %>'s Favorites </h1>
 
+<h4>Search by Song:</h4>
+  <%= form_tag(songs_path, method: "get") do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag "Search" %>
+  <% end %>
+
+<br>
+<br>
+
 <% @user.favorites.each do |fav|%>
  <table>
     <tr>
@@ -12,9 +21,4 @@
 <% end %>
 
 
- <h4>Search by Song:</h4>
-   <%= form_tag(songs_path, method: "get") do %>
-   <%= text_field_tag(:search, params[:search]) %>
-   <%= submit_tag "Search" %>
-   <% end %>
 

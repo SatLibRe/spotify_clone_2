@@ -9,7 +9,34 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: grey;">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"> Home </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/users/<%=User.find_by(id: session[:user_id]).id %>"> Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </header>
+
   <body>
+  <br>
+  <br>
     <%= yield %>
   </body>
-</html>
+  </nav>

@@ -6,7 +6,7 @@
 <h4>Age: <%= @artist.age %><h4>
 <h4>Bio: <%= @artist.bio %></h4>
 
-<h4> Songs by this Artist: </h4>
+<h4> Songs by <%= @artist.name %>: </h4>
 <% @artist.songs.each do |song| %>
    <ul>
    <li><%= song.name %></li>
@@ -14,3 +14,11 @@
    </ul>
    <% end %>
 <br>
+<h5> Artists Like <%= @artist.name %>: </h5>
+   <% @artist.genres.each do |genre| %>
+      <% genre.artists.where.not(id: @artist.id).each do |artist| %>
+            <%= artist.name %>
+         <br>
+      <% end %>
+   <% end %>
+

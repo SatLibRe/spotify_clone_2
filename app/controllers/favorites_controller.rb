@@ -9,7 +9,6 @@ class FavoritesController < ApplicationController
 
  def create
     @favorite = Favorite.create(song_id: params[:song_id], user_id: current_user.id)
-    redirect_to songs_path
  end 
 
  def show

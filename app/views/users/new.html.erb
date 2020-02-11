@@ -1,8 +1,13 @@
-<h1> New user signup</h1>
-<%= form_for @user do |f| %>
-    
-    Name <%= f.text_field :name %><br>
-    Password <%= f.text_field :password %><br>
-    <%= f.submit "Create New User" %>
-
+<html style="background: black;">
+    <div style="text-align: center;">
+        <h5  style="color: white;"><%= form_for @user do |f| %>
+            Name <%= f.text_field :name %>
+            Password  <%= f.password_field :password%>
+            <%= f.submit "Create New User" %>
+        </h5>
+    <div>
 <% end %>
+
+
+
+

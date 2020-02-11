@@ -18,7 +18,7 @@ Favorite.destroy_all
 
 50.times { Artist.create(name: Faker::Music.band, age: 10, bio: Faker::Lorem.paragraphs(number: 1), image: "text") }
 
-User.create(name: "Miles") 
+User.create(name: "Miles", password: "123") 
 
 75.times { Song.create(name: Faker::Music.album, image: "image of sad", genre_id: Genre.all.sample.id, artist_id: Artist.all.sample.id) }
 

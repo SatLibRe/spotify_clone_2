@@ -10,7 +10,13 @@
 
   <h4>Search by Artist:</h4>
    <%= form_tag(songs_path, method: "get") do %>
-   <%= text_field_tag(:search, params[:search]) %>
+   <%= text_field_tag(:artist_search, params[:artist_search]) %>
+   <%= submit_tag "Search", name: "nil"%>
+   <% end %> 
+
+    <h4>Search by Genre:</h4>
+   <%= form_tag(songs_path, method: "get") do %>
+   <%= text_field_tag(:genre_search, params[:genre_search]) %>
    <%= submit_tag "Search", name: "nil"%>
    <% end %> 
 
@@ -21,8 +27,8 @@
    <%= song.name %>
    <table>
     <tr>
-      <%= link_to song.genre.name, genre_path(song.genre_id) %> |
       <%= link_to song.artist.name, artist_path(song.artist_id) %> |
+      <%= link_to song.genre.name, genre_path(song.genre_id) %> |
       <%= button_to 'favorite', song_favorite_path(song), method: "post" %> 
     </tr>
    </table>

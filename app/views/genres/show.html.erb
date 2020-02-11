@@ -1,0 +1,9 @@
+<h1>All the songs of genre: </h1>
+<h1><%= @genre.name %>'s Page</h1>
+<% @genre.songs.each do |song| %>
+   <ul>
+   <li><%= song.name %></li>
+   <%= button_to 'favorite', song_favorite_path(song), method: "post" %>
+   </ul>
+   <% end %>
+<br>

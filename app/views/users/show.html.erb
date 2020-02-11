@@ -1,5 +1,10 @@
 <h1> <%= @user.name %>'s Favorites </h1>
 
+<% if flash[:message] %>
+  <h3 style="color: red"><%= flash[:message]%></h3>
+<% end %>
+
+
 <h4>Search by Song:</h4>
   <%= form_tag(songs_path, method: "get") do %>
   <%= text_field_tag(:search, params[:search]) %>

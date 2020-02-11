@@ -14,7 +14,7 @@
    <%= submit_tag "Search", name: "nil"%>
    <% end %> 
 
-    <h4>Search by Genre:</h4>
+   <h4>Search by Genre:</h4>
    <%= form_tag(songs_path, method: "get") do %>
    <%= text_field_tag(:genre_search, params[:genre_search]) %>
    <%= submit_tag "Search", name: "nil"%>

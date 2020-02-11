@@ -17,7 +17,7 @@
 <h5> Artists Like <%= @artist.name %>: </h5>
    <% @artist.genres.each do |genre| %>
       <% genre.artists.where.not(id: @artist.id).each do |artist| %>
-            <%= artist.name %>
+            <%= link_to artist.name, artist_path(artist) %>
          <br>
       <% end %>
    <% end %>

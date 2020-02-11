@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
    def index 
       @user = current_user
-      if params[:artist_search] 
+      if params[:artist_search]
          @songs = Song.artist_search(params[:artist_search], params[:id])
       elsif params[:search] 
          @songs = Song.search(params[:search], params[:id])

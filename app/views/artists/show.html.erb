@@ -1,2 +1,16 @@
-<h1>Artists#show</h1>
-<p>Find me in app/views/artists/show.html.erb</p>
+<h1><%= @artist.name %>'s Page</h1>
+<br>
+<br>
+<%= @artist.image %>
+<br>
+<h4>Age: <%= @artist.age %><h4>
+<h4>Bio: <%= @artist.bio %></h4>
+
+<h4> Songs by this Artist: </h4>
+<% @artist.songs.each do |song| %>
+   <ul>
+   <li><%= song.name %></li>
+   <%= button_to 'favorite', song_favorite_path(song), method: "post" %>
+   </ul>
+   <% end %>
+<br>

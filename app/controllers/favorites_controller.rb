@@ -8,7 +8,7 @@ class FavoritesController < ApplicationController
  end 
 
  def create
-    @favorite = Favorite.create(song_id: params[:song_id], user_id: User.first.id )
+    @favorite = Favorite.create(song_id: params[:song_id], user_id: current_user.id)
     redirect_to songs_path
  end 
 
@@ -25,6 +25,6 @@ class FavoritesController < ApplicationController
  private
 
  def favorites_params
-    params.require(:favorite).permit(:user_id, :song_id)
+    params.require(:favorite).permit(:song_id)
  end 
 end

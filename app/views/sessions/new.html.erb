@@ -1,0 +1,15 @@
+
+<% if flash.now[:message]%>
+<%= flash.now[:message] %>
+<%end%>
+
+<h1>Log in!</h1>
+
+<%= form_tag "/sessions" do %>
+Name: <%= text_field_tag "name"%>
+Password: <%= text_field_tag "password"%>
+<%= submit_tag "password"%>
+<% end %>
+
+<%= link_to "Dont have a login? Register here", new_user_path%>
+

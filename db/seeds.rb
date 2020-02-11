@@ -14,14 +14,12 @@ User.destroy_all
 Song.destroy_all
 Favorite.destroy_all
 
-g1 = Genre.create(name: Faker::Music.genre, image: "text")
-g2 = Genre.create(name: Faker::Music.genre, image: "text")
-g3 = Genre.create(name: Faker::Music.genre, image: "text")
-a1 = Artist.create(name: Faker::Music.band, age: 10, bio: "very cool", image: "text")
-a2 = Artist.create(name: Faker::Music.band, age: 10, bio: "very cool", image: "text")
-a3 = Artist.create(name: Faker::Music.band, age: 10, bio: "very cool", image: "text")
-u1 = User.create(name: "Miles") 
-s1 = Song.create(name: Faker::Music.album, image: "image of sad", genre_id: g1.id, artist_id: a1.id)
-s2 = Song.create(name: Faker::Music.album, image: "image of sad", genre_id: g2.id, artist_id: a2.id)
-s3 = Song.create(name: Faker::Music.album, image: "image of sad", genre_id: g3.id, artist_id: a3.id)
+10.times { Genre.create(name: Faker::Music.genre, image: "text") }
+
+50.times { Artist.create(name: Faker::Music.band, age: 10, bio: Faker::Lorem.paragraphs(number: 1), image: "text") }
+
+User.create(name: "Miles") 
+
+75.times { Song.create(name: Faker::Music.album, image: "image of sad", genre_id: Genre.all.sample.id, artist_id: Artist.all.sample.id) }
+
 

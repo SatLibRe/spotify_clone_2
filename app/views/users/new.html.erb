@@ -1,12 +1,14 @@
+
 <html style="background: black;">
     <div style="text-align: center;">
-        <h5  style="color: white;"><%= form_for @user do |f| %>
+        <img style="margin-top: 10%; max-width: 100%; border: solid 2px; border-radius: 50%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS1YT2zmll5bU0qOfXz021FjUDOrg5Fz11gh18OXik9pL1olbcz" alt="">
+        <h5 style="color: white;"> <%= form_for @user do |f| %>
             Name <%= f.text_field :name %>
             Password  <%= f.password_field :password%>
             <%= f.submit "Create New User" %>
+            <%end%>
         </h5>
     </div>
-<% end %>
 
 
 

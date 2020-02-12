@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SpotifyClone</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+      <title>SpotifyClone</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-
- <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" style="
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" style="
     background: black;">
     <div class="container">
        <a class="navbar-brand" href="#" style="font-family: cursive;">Wave</a>
@@ -30,8 +30,11 @@
     </div>
   </nav>
 
-    <%= yield %>
-  </body>
-  </nav>
+  
+
+      <%= yield %>
+    </body>
+  </html>
+  
 
  

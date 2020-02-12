@@ -4,7 +4,7 @@
 <% @genre.songs.each do |song| %>
    <ul>
    <li><%= song.name %></li>
-   <%= button_to 'favorite', song_favorite_path(song), method: "post" %>
+   <td><button type="button" class="btn btn-dark"> <a rel="nofollow" data-method="post" href="/favorite_song/<%=song.id%>%" style="color: white;">favorite</a> </button> </td> 
    </ul>
    <% end %>
    

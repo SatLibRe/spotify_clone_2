@@ -1,8 +1,8 @@
 <h1 style="margin-top: 10%;"> </h1>
 <div container class="container"; style="text-align: center;">
    <h1><%= @artist.name %>'s Page </h1>
-   <div container class="container"; style="text-align: center;">
-      <img src=<%=@artist.image%> style="width: 300px; border: solid; .5px; border-radius: 75%;"/>
+   <div container class="container"; style="text-align: center; background-image: url(<%= @artist.image %>)">
+      <img src=<%=@artist.image%> style="width: 300px;  border-radius: 75%;"/>
    </div>
 </div>
 
@@ -14,7 +14,7 @@
 <% @artist.songs.each do |song| %>
    <ul>
    <li><%= song.name %></li>
-   <%= button_to 'favorite', song_favorite_path(song), method: "post" %>
+   <td><button type="button" class="btn btn-dark"> <a rel="nofollow" data-method="post" href="/favorite_song/<%=song.id%>%" style="color: white;">favorite</a> </button> </td> 
    </ul>
    <% end %>
 <br>

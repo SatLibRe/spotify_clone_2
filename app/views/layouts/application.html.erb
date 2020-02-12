@@ -21,6 +21,30 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+         <li class="nav-item">
+            <p style="color: white;">Search by Genre</p> 
+             <%= form_tag(songs_path, method: "get") do %>
+              <%= text_field_tag(:genre_search, params[:genre_search]) %>
+              <%= submit_tag "Search", name: "nil" %>
+              <% end %> 
+          </li>
+         <li class="nav-item">
+            <p style="color: white;">Search by Artist</p> 
+             <%= form_tag(songs_path, method: "get") do %>
+              <%= text_field_tag(:artist_search, params[:artist_search]) %>
+              <%= submit_tag "Search", name: "nil" %>
+              <% end %> 
+          </li>
+        <li class="nav-item">
+            <p style="color: white;">Search by Song</p> 
+             <%= form_tag(songs_path, method: "get") do %>
+              <%= text_field_tag(:search, params[:search]) %>
+              <%= submit_tag "Search", name: "nil" %>
+              <% end %> 
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/songs">Songs</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="/users/<%= session[:user_id]%>">Profile</a>
           </li>

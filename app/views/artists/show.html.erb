@@ -1,28 +1,30 @@
-<h1 style="margin-top: 5%;"> </h1>
+<h1 style="margin-top: 10%;"> </h1>
 <div container class="container"; style="text-align: center;">
-   <h1><%= @artist.name %>'s Page </h1>
-   <div container class="container"; style="text-align: center;">
-      <img src="https://www.gstatic.com/tv/thumb/persons/177/177_v9_ba.jpg" style="width: 300px; border: solid; .5px; border-radius: 75%;"/>
+   <h1 style="text-align: left;"><%= @artist.name %>'s Page </h1>
+   <div container class="container"; style="text-align: center; background-image: url(<%= @artist.image %>)">
+      <img src=<%=@artist.image%> style="width: 300px;  border-radius: 75%;"/>
    </div>
 </div>
 
 <br>
-<h4>Age: <%= @artist.age %><h4>
-<h4>Bio: <%= @artist.bio %></h4>
+<div style="margin-left: 6%">
+   <h4>Age: <%= @artist.age %><h4>
+   <h4>Bio: <%= @artist.bio %></h4>
 
-<h4> Songs by <%= @artist.name %>: </h4>
-<% @artist.songs.each do |song| %>
-   <ul>
-   <li><%= song.name %></li>
-   <%= button_to 'favorite', song_favorite_path(song), method: "post" %>
-   </ul>
-   <% end %>
-<br>
-<h5> Artists Like <%= @artist.name %>: </h5>
-   <% @artist.genres.each do |genre| %>
-      <% genre.artists.where.not(id: @artist.id).each do |artist| %>
-            <%= link_to artist.name, artist_path(artist) %>
-         <br>
+   <h4> Songs by <%= @artist.name %>: </h4>
+   <% @artist.songs.each do |song| %>
+      <ul>
+      <li><%= song.name %></li>
+      <td><button type="button" class="btn btn-dark"> <a rel="nofollow" data-method="post" href="/favorite_song/<%=song.id%>%" style="color: white;">favorite</a> </button> </td> 
+      </ul>
       <% end %>
-   <% end %>
+   <br>
+   <h5> Artists Like <%= @artist.name %>: </h5>
+      <% @artist.genres.each do |genre| %>
+         <% genre.artists.where.not(id: @artist.id).each do |artist| %>
+               <%= link_to artist.name, artist_path(artist) %>
+            <br>
+         <% end %>
+      <% end %>
+</div>
 

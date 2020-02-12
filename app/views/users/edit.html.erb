@@ -1,2 +1,11 @@
-<h1>User#edit</h1>
-<p>Find me in app/views/user/edit.html.erb</p>
+
+
+ <div style="text-align: center; margin-top: 25%;">
+    <p>Make your edits below:</p>
+        <h5> <%= form_for @user do |f| %>
+            Name <%= f.text_field :name %>
+            Image <%= f.text_field :image %>
+            <%= f.submit "Update Profile" %>
+            <%end%>
+        </h5>
+</div>

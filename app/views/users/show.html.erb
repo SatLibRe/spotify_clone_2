@@ -1,41 +1,32 @@
-<h1 style="margin-top: 5%;"> 
-<%= @user.name %>'s Favorites 
-</h1>
+<div container class="container"; style="text-align: center;">
+  <h1 style="margin-top: 10%;">
+    <%= @user.name %>'s Profile
+  </h1>
+   <div container class="container"; style="text-align: center;">
+      <img src=<%=@user.image%> style="width: 300px; border: solid; .5px; border-radius: 75%;"/>
+      <p><%=link_to "No image? Upload one here", edit_user_path(@user)%></p>
+   </div>
+</div>
+
+<h3> 
+  Favorites 
+</h3>
 
 <% if flash[:message] %>
   <h3 style="color: red"><%= flash[:message]%></h3>
 <% end %>
 
 
-<h5>Search by Song:</h5>
-  <%= form_tag(songs_path, method: "get") do %>
-  <%= text_field_tag(:search, params[:search]) %>
-  <%= submit_tag "Search", name: "nil", placeholder: "enter song title"%>
-  <% end %>
-
-  <h5>Search by Artist:</h5>
-  <%= form_tag(songs_path, method: "get") do %>
-  <%= text_field_tag(:artist_search, params[:artist_search]) %>
-  <%= submit_tag "Search", name: "nil"%>
-  <% end %> 
-
-  <h5>Search by Genre:</h5>
-  <%= form_tag(songs_path, method: "get") do %>
-  <%= text_field_tag(:genre_search, params[:genre_search]) %>
-  <%= submit_tag "Search", name: "nil"%>
-  <% end %> 
 
 <br>
 <br>
-
-//////
 
 <% @user.favorites.each do |fav|%>
  <table>
     <tr>
       <%= Song.find(fav.song_id).name %> |
-      <%= Genre.find(Song.find(fav.song_id).genre_id).name %> |
-      <%= Artist.find(Song.find(fav.song_id).artist_id).name %> |
+      <%= link_to Genre.find(Song.find(fav.song_id).genre_id).name, genre_path(Genre.find(Song.find(fav.song_id).genre_id)) %> |
+      <%= link_to Artist.find(Song.find(fav.song_id).artist_id).name, artist_path(Artist.find(Song.find(fav.song_id).artist_id)) %> |
       <%= button_to "Unfavorite", fav, method: "delete"%>
     </tr>
 </table>

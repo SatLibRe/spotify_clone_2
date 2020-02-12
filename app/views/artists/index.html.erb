@@ -1,4 +1,5 @@
 <h1 style="margin-top: 5%;"> Catalog of Artists </h1>
+<br>
 
 <h5>Search by Song:</h5>
    <%= form_tag(songs_path, method: "get") do %>
@@ -17,7 +18,9 @@
    <%= text_field_tag(:genre_search, params[:genre_search]) %>
    <%= submit_tag "Search", name: "nil"%>
    <% end %> 
-    
+
+ <br>
+ <br>   
 <% @artists.each do |artist| %>
    <ul>
    <li><%= link_to artist.name, artist_path(artist) %></li>

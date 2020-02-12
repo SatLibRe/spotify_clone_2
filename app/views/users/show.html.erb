@@ -6,6 +6,7 @@
   <h3 style="color: red"><%= flash[:message]%></h3>
 <% end %>
 
+
 <h5>Search by Song:</h5>
   <%= form_tag(songs_path, method: "get") do %>
   <%= text_field_tag(:search, params[:search]) %>
@@ -36,6 +37,7 @@
       <%= button_to "Unfavorite", fav, method: "delete"%>
     </tr>
 </table>
+
 <% end %>
 
 

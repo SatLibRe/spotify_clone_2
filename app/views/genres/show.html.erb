@@ -1,6 +1,6 @@
-<h1 style="margin-top: 10%;"><%= @genre.name %>'s Page</h1>
+<h1 style="margin-top: 10%;"><%= @genre.name %> </h1>
 
-<h1>All the songs of genre: </h1>
+<h1>Songs of <%=@genre.name%></h1>
 <% @genre.songs.each do |song| %>
    <ul>
    <li><%= song.name %></li>

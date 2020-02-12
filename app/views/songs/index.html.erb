@@ -9,12 +9,19 @@
     <br>  
 
   <% @songs.each do |song| %>
-    <%= song.name %>
-    <table style= "width: 100%;">
-      <tr style= "width: 100%;">
-        <%= link_to song.artist.name, artist_path(song.artist_id) %> |
-        <%= link_to song.genre.name, genre_path(song.genre_id) %> |
-        <%= button_to 'favorite', song_favorite_path(song), method: "post" %> 
+    <table class="table" style= "table-layout: fixed;">
+     <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Artist</th>
+      <th scope="col">Genre</th>
+    </tr>
+    </thead>
+      <tr>
+        <td><%= song.name %> </td>
+        <td><%= link_to song.artist.name, artist_path(song.artist_id) %> </td>
+        <td><%= link_to song.genre.name, genre_path(song.genre_id) %> </td>
+        <td><%= button_to 'favorite', song_favorite_path(song), method: "post" %> </td>
       </tr>
     </table>
   <% end %>

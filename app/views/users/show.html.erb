@@ -22,12 +22,19 @@
 <br>
 
 <% @user.favorites.each do |fav|%>
- <table>
+ <table class="table" style= "table-layout: fixed;">
+   <thead>
     <tr>
-      <%= Song.find(fav.song_id).name %> |
-      <%= link_to Genre.find(Song.find(fav.song_id).genre_id).name, genre_path(Genre.find(Song.find(fav.song_id).genre_id)) %> |
-      <%= link_to Artist.find(Song.find(fav.song_id).artist_id).name, artist_path(Artist.find(Song.find(fav.song_id).artist_id)) %> |
-      <%= button_to "Unfavorite", fav, method: "delete"%>
+      <th scope="col">Name</th>
+      <th scope="col">Artist</th>
+      <th scope="col">Genre</th>
+    </tr>
+    </thead>
+    <tr>
+      <td><%= Song.find(fav.song_id).name %> </td>
+      <td><%= link_to Genre.find(Song.find(fav.song_id).genre_id).name, genre_path(Genre.find(Song.find(fav.song_id).genre_id)) %> </td>
+      <td><%= link_to Artist.find(Song.find(fav.song_id).artist_id).name, artist_path(Artist.find(Song.find(fav.song_id).artist_id)) %> </td>
+      <td><%= button_to "Unfavorite", fav, method: "delete"%> </td>
     </tr>
 </table>
 

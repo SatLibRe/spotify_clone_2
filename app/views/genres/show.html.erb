@@ -1,9 +1,20 @@
+<h1 style="margin-top: 10%;"><%= @genre.name %>'s Page</h1>
+
 <h1>All the songs of genre: </h1>
-<h1><%= @genre.name %>'s Page</h1>
 <% @genre.songs.each do |song| %>
    <ul>
    <li><%= song.name %></li>
    <%= button_to 'favorite', song_favorite_path(song), method: "post" %>
    </ul>
    <% end %>
-<br>
+   
+<h5> All the other genres:<br> </h5>
+<% Genre.all.each do |genre| %>
+        
+<%= link_to genre.name, genre_path(genre)%><br>
+        
+<%end %>
+
+
+
+    

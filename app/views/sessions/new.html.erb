@@ -1,26 +1,17 @@
 
-<html style="background: black;">
-
+<html style="background: black; background-image: url(https://images4.alphacoders.com/927/thumb-1920-927576.jpg)">
 
     <% if flash.now[:message]%>
     <h4 style="color: white;"> <%= flash.now[:message] %> </h4>
     <%end%>
 
-    
-
-
-        <div style="text-align: center;">
-        <img style="margin-top: 10%; max-width: 100%; border: solid 2px; border-radius: 50%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS1YT2zmll5bU0qOfXz021FjUDOrg5Fz11gh18OXik9pL1olbcz" alt="">
-        <h5 >
+    <div style="text-align: center; margin-top: 25%">
+        <h5 style="color: white;">
         <%= form_tag "/sessions" do %>
         Name: <%= text_field_tag "name" %>
         Password:  <%= password_field_tag "password"%>
         <%= submit_tag "Login"%>
-        <% end %>
         </h5>
-
-
-<h6 style="color: white;"><%= link_to "Register", new_user_path%> </h6>
-
-
-</div>
+        <% end %>
+        <h6 style="color: white;"><%= link_to "Register", new_user_path%> </h6>
+    </div>

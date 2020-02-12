@@ -1,4 +1,6 @@
-<h1> <%= @user.name %>'s Favorites </h1>
+<h1 style="margin-top: 5%;"> 
+<%= @user.name %>'s Favorites 
+</h1>
 
 <% if flash[:message] %>
   <h3 style="color: red"><%= flash[:message]%></h3>
@@ -27,6 +29,5 @@
 
 
 
-   <%= link_to 'logout', destroy_session_path, method: :delete %>
 
 

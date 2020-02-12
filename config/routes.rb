@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post '/favorite_song/:song_id', to: 'favorites#create', as: 'song_favorite'
   get '/sessions/new', to: 'sessions#new', as: 'new_session'
   post '/sessions', to: 'sessions#create', as: 'create_session'
-  delete '/sessions', to: 'sessions#destroy', as: 'destroy_session'
+  get '/logout', to: 'sessions#destroy', as: 'destroy_session'
   
 
 

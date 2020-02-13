@@ -21,14 +21,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-         <li class="nav-item">
+         <li class="nav-item" style= "padding-right: 10px;">
             <p style="color: white;">Search by Genre</p> 
              <%= form_tag(songs_path, method: "get") do %>
               <%= text_field_tag(:genre_search, params[:genre_search]) %>
               <%= submit_tag "Search", name: "nil" %>
               <% end %> 
           </li>
-         <li class="nav-item">
+         <li class="nav-item" style= "padding-right: 10px;">
             <p style="color: white;">Search by Artist</p> 
              <%= form_tag(songs_path, method: "get") do %>
               <%= text_field_tag(:artist_search, params[:artist_search]) %>

@@ -6,7 +6,7 @@
     <h4 style="color: white;"> <%= flash.now[:message] %> </h4>
     <%end%>
  
-  
+  <h6 style="color: white; text-align: right"><a style="color: white" href="/users/new">Register</a>
 
     <div class="home-video-wrapper">
         <%= video_tag "login_video.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video"%>
@@ -17,6 +17,5 @@
                 <%= submit_tag "Login"%>
                 <% end %>
             </div>
-        <h6 style="color: white;"><%= link_to "Register", new_user_path%> </h6>
     </div>
     

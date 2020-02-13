@@ -22,7 +22,6 @@
         <td><%= link_to song.artist.name, artist_path(song.artist_id) %> </td>
         <td><%= link_to song.genre.name, genre_path(song.genre_id) %> </td>
         <td><button type="button" class="btn btn-dark"> <a rel="nofollow" data-method="post" href="/favorite_song/<%=song.id%>%" style="color: white;">favorite</a> </button> </td> 
-        
       </tr>
     </table>
   <% end %>

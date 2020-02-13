@@ -8,20 +8,27 @@
 </div>
 
 <div style="margin-left: 7%">
-   <h2> <%= @genre.name%> Songs </h2>
+   <h2 style=" margin-top: 5%;"> <%= @genre.name%> Songs </h2>
    <% @genre.songs.each do |song| %>
-      <ul>
-      <li><%= song.name %></li>
-      <td><button type="button" class="btn btn-dark"> <a rel="nofollow" data-method="post" href="/favorite_song/<%=song.id%>%" style="color: white;">favorite</a> </button> </td> 
-      </ul>
-      <% end %>
-      
+      <table class="table" style= "table-layout: fixed;">
+      <thead>
+         <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Artist</th>
+         </tr>
+      </thead>
+         <tr>
+         <td><%= song.name %> </td>
+         <td><%= link_to song.artist.name, artist_path(song.artist_id) %> </td>
+         <td><button type="button" class="btn btn-dark"> <a rel="nofollow" data-method="post" href="/favorite_song/<%=song.id%>%" style="color: white;">favorite</a> </button> </td> 
+         </tr>
+      </table>
+   <% end %>
+
    <h5> All the other genres:<br> </h5>
-   <% Genre.all.each do |genre| %>
-         
-   <%= link_to genre.name, genre_path(genre)%><br>
-         
-   <%end %>
+      <% Genre.all.each do |genre| %>
+         <%= link_to genre.name, genre_path(genre)%><br>
+      <%end %>
 </div>
 
 

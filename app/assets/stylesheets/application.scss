@@ -15,21 +15,31 @@
 
  @import "bootstrap";
 
- h1{
+ h1, h2, h3, h4, h5, h6, p {
     font-family: 'proxima-nova', sans-serif;
  }
- h2{
-    font-family: 'proxima-nova', sans-serif;
- }
- h3{
-    font-family: 'proxima-nova', sans-serif;
- }
- h4{
-    font-family: 'proxima-nova', sans-serif;
- }
- h5{
-    font-family: 'proxima-nova', sans-serif;
- }
- p{
-    font-family: 'proxima-nova', sans-serif;
- }
+ 
+ .home_video {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+    top: 0;
+    z-index: -2;
+   }
+
+.home-video-wrapper {
+height: 100vh;
+display: flex;
+}
+
+.form_div {
+   height: 25%;
+   margin-left: 40%;
+   margin-top: 25%;
+}
+
+
+

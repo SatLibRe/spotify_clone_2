@@ -1,32 +1,30 @@
-
-  <div style="margin-left: 7%;"><h1 style="margin-top: 10%;">Songs</h1></div>
+<div style="margin-left: 7.5%;"><h1 style="margin-top: 10%;">Songs</h1></div>
   <br>
   <div container class="container";>
       <img src='https://cdn.pixabay.com/photo/2019/11/14/16/12/ocean-4626520_960_720.jpg' style="margin-left: 3.5px; width: 90%; height: 250px; margin-bottom: 35px;" class="center"/>
 
   <br>
-  
-
   <br> 
-  <div style="margin-left: 7%;">
+
+<div>
   <% @songs.each do |song| %>
     <table class="table" style= "table-layout: fixed;">
-     <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Artist</th>
-      <th scope="col">Genre</th>
-    </tr>
-    </thead>
-      <tr>
-        <td><%= song.name %> </td>
-        <td><%= link_to song.artist.name, artist_path(song.artist_id) %> </td>
-        <td><%= link_to song.genre.name, genre_path(song.genre_id) %> </td>
-        <td><button type="button" class="btn btn-dark"> <a rel="nofollow" data-method="post" href="/favorite_song/<%=song.id%>%" style="color: white;">favorite</a> </button> </td> 
-      </tr>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Artist</th>
+          <th scope="col">Genre</th>
+        </tr>
+      </thead>
+        <tr>
+          <td><%= song.name %> </td>
+          <td><%= link_to song.artist.name, artist_path(song.artist_id) %> </td>
+          <td><%= link_to song.genre.name, genre_path(song.genre_id) %> </td>
+          <td><button type="button" class="btn btn-dark"> <a rel="nofollow" data-method="post" href="/favorite_song/<%=song.id%>%" style="color: white;">favorite</a> </button> </td> 
+        </tr>
     </table>
   <% end %>
-  </div>
+</div>
 
   
 

@@ -81,7 +81,7 @@ image_arr = [
         
     
 
-10.times { Genre.create(name: Faker::Music.genre, image: genre_image_arr.sample) }
+6.times { Genre.create(name: Faker::Music.genre, image: genre_image_arr.sample) }
 
 50.times { Artist.create(name: Faker::Music.band, age: rand(21..65), bio: Faker::Quote.famous_last_words, image: image_arr.sample) }
 

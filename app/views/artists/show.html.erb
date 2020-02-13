@@ -9,7 +9,7 @@
 <br>
 <div style="margin-left: 6%">
    <h4>Age: <%= @artist.age %><h4>
-   <h4>Bio: <%= @artist.bio %></h4>
+   <h4>Bio: "<%= @artist.bio %>"</h4>
 
    <h4> Songs by <%= @artist.name %>: </h4>
    <% @artist.songs.each do |song| %>

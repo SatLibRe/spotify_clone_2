@@ -57,11 +57,33 @@ image_arr = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRWBAeob5daXPiksYSzcVpHHCZeqpWGVUnLthQDPMAwE6BxmKo2", 
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAxPd5QRFOqWh2bWE4honyBkS5LnBv-1kYqfk4wwfLQfmoHIFF" 
     ]
+
+    genre_image_arr = [ 
+        "https://scx1.b-cdn.net/csz/news/800/2018/europeslostf.jpg", 
+        "https://www.thoughtco.com/thmb/LKYahK03uU7fzS2tMMMsNEc0Qcg=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/tundra-animal-5be07ffe46e0fb0026dfda62.jpg",
+        "https://6469da.medialib.edu.glogster.com/phJDHMveOgTqImqzrnIG/media/b9/b91ba43401ef9c3399bdfa95d688f7f8b95bdaef/northern-lights.jpg",
+        "https://i.pinimg.com/originals/85/ef/4a/85ef4a6357f409d691e27291ed609c33.jpg",
+        "https://www.scienceabc.com/wp-content/uploads/2019/12/Beautiful-autumn-scene-of-Hintersee-lake-Andrew-Mayovskyys.jpg",
+        "https://external-preview.redd.it/oss8vSsvhv8z_fEjfQwH9lNBarLEJn1HSR7ZrlqTpKg.png?width=960&crop=smart&format=pjpg&auto=webp&s=43735796f365576ce43496d17ece8c23fe370173",
+        "https://media.treehugger.com/assets/images/2019/06/Picea_glauca_taiga.jpg.860x0_q70_crop-scale.jpg",
+        "https://gameplay.tips/uploads/posts/2018-12/1545673124_atlas-2.jpg",
+        "https://www.planetware.com/photos-large/USAK/us-alaska-kenai-fjords.jpg", 
+        "https://www.scienceabc.com/wp-content/uploads/2019/12/White-cloud-formations-in-a-bright-blue-sky-over-the-beautiful-African-savannahCobus-Oliviers.jpg",
+        "https://angiegreaves.com/wp-content/uploads/2018/06/52570bf61772c62f0054edae6a16d437-reggae-music-background.jpg",
+        "https://www.side-line.com/wp-content/uploads/2019/03/Alien-Skin.jpg",
+        "https://66.media.tumblr.com/241062cb7a04736be6fc8810414d9f22/tumblr_on76cr3kX81uiyxrmo1_1280.png",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT32KUI7oW5KKlKuTYBropa8y-6ali5kMe71_sEIrUa6kfeYglE",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQIh1s9NmZ84Xz6XK9il0qQ6Q-b68I-SN50FyAhC05Az7okXLHV",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRKB_etUkKN2NEl7b3nTxcqu4ZxNZIL_asvXISZyvwVJvvQSCgt",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTaee9G3S2RHRrL5k-ld-4ecHqMGZT_fTSg9tsnHzroKnxS5Zt2",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQInMeX5u5uuvyiZBbdw3lx1_NkYjAWyl47avJWLjK8dj4c1o9f"
+        ]
+        
     
 
-10.times { Genre.create(name: Faker::Music.genre, image: "text") }
+10.times { Genre.create(name: Faker::Music.genre, image: genre_image_arr.sample) }
 
-50.times { Artist.create(name: Faker::Music.band, age: 10, bio: Faker::Lorem.paragraphs(number: 1), image: image_arr.sample) }
+50.times { Artist.create(name: Faker::Music.band, age: rand(21..65), bio: Faker::Quote.famous_last_words, image: image_arr.sample) }
 
 User.create(name: "Miles", password: "123") 
 

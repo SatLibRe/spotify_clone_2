@@ -1,2 +1,45 @@
-<h1>User#index</h1>
-<p>Find me in app/views/user/index.html.erb</p>
+<h1 style= "margin-top: 10%; margin-left: 8%;"> All of Our User's Favorites</h1>
+
+<% @users.each do |user|%>
+
+    <div container class="container"; style="text-align: center;">
+    <h1 style="margin-top: 10%; padding-bottom: 5px;">
+        <%= user.name %>'s Profile
+    </h1>
+    <div container class="container"; style="text-align: center;">
+        <img src=<%=user.image%> style="width: 500px; border-radius: 75%;"/>
+            
+    </div>
+    </div>
+
+    <h3 style="margin-left: 8%;"> Favorites </h3>
+
+
+    <br>
+    <br>
+
+    <% user.favorites.each do |fav|%>
+    <table class="table" style= "table-layout: fixed; margin-left: 8%;">
+    <thead>
+        <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Artist</th>
+        <th scope="col">Genre</th>
+        </tr>
+        </thead>
+        <tr>
+        <td><%= Song.find(fav.song_id).name %> </td>
+        <td><%= link_to Artist.find(Song.find(fav.song_id).artist_id).name, artist_path(Artist.find(Song.find(fav.song_id).artist_id)) %> </td>
+        <td><%= link_to Genre.find(Song.find(fav.song_id).genre_id).name, genre_path(Genre.find(Song.find(fav.song_id).genre_id)) %> </td>
+        </tr>
+        
+    </table>
+
+    <% end %>
+
+<%end%>
+
+
+
+
+

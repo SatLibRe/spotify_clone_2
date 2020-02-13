@@ -4,18 +4,17 @@
   </h1>
    <div container class="container"; style="text-align: center;">
       <img src=<%=@user.image%> style="width: 300px; border: solid; .5px; border-radius: 75%;"/>
-        <p><%=link_to "No image? Upload one here", edit_user_path(@user)%></p>
+      <% if @user.image == nil %>
+        <p> <%=link_to "No image? Upload one here", edit_user_path(@user)%> </p>
+      <% else %>
+        <p><%=link_to "Update your page", edit_user_path(@user)%></p>
+      <% end %>
    </div>
 </div>
 
 <h3> 
   Favorites 
 </h3>
-
-<% if flash[:message] %>
-  <h3 style="color: red"><%= flash[:message]%></h3>
-<% end %>
-
 
 
 <br>

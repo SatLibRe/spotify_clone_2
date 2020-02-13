@@ -1,6 +1,8 @@
- <% if flash.now[:message]%>
-    <h4 style="color: white;"> <%= flash.now[:message] %> </h4>
+ <% if flash.now[:messages]%>
+    <% flash.now[:messages].each do |message| %>
+    <h4 style="color: white;"> <%= message %> </h4>
     <%end%>
+<%end%>
 
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <h6 style="color: white; text-align: right"><a style="color: white" href="/sessions/new">Login</a>

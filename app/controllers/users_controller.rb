@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to new_session_path
     else
-      flash.now[:message] = "User name already exits"
+      flash.now[:messages] = @user.errors.full_messages
       render :new,:layout => false
     end
   

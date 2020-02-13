@@ -3,17 +3,18 @@ class Song < ApplicationRecord
    belongs_to :artist
    has_many :favorites 
 
-
+   # Thank you to our brilliant classmate, Kate Raskauskas for helping us figure out the below code!!!!!!!
    def self.artist_search(search, id)
       if search
-         if Artist.find_by(name: search)
-            @songs = Song.where(['artist_id LIKE ?', "%#{(Artist.find_by(name: search)).id}%"])
-         else 
-            @songs = []   
-         end 
+         artists = Artist.where(['name LIKE ?', "%#{search}%"])
+         @songs = []
+         artists.each do |artist|
+            @songs = @songs + artist.songs
+         end
       else
          @songs = Song.all
       end
+      @songs
    end
 
    def self.search(search, id)
@@ -26,16 +27,15 @@ class Song < ApplicationRecord
 
    def self.genre_search(search, id)
       if search
-         if Genre.find_by(name: search)
-            @songs = Song.where(['genre_id LIKE ?', "%#{(Genre.find_by(name: search)).id}%"])
-         else 
-            @songs = []
-         end 
+         genres = Genre.where(['name LIKE ?', "%#{search}%"])
+         @songs = []
+         genres.each do |genre|
+            @songs = @songs + genre.songs
+         end
       else
          @songs = Song.all
       end
+      @songs
    end
-
-   
 
 end

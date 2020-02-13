@@ -1,17 +1,22 @@
 
-<html style="background: black; background-image: url(https://images4.alphacoders.com/927/thumb-1920-927576.jpg)">
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <% if flash.now[:message]%>
     <h4 style="color: white;"> <%= flash.now[:message] %> </h4>
     <%end%>
 
-    <div style="text-align: center; margin-top: 25%">
-        <h5 style="color: white;">
-        <%= form_tag "/sessions" do %>
-        Name: <%= text_field_tag "name" %>
-        Password:  <%= password_field_tag "password"%>
-        <%= submit_tag "Login"%>
-        </h5>
-        <% end %>
+  
+
+    <div class="home-video-wrapper">
+        <%= video_tag "login_video.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video"%>
+            <div class= "form_div" >
+                <%= form_tag "/sessions" do %>
+                <h6 style="color: white">Name: <%= text_field_tag "name" %></h6>
+                <h6 style="color: white">Password:  <%= password_field_tag "password"%></h6>
+                <%= submit_tag "Login"%>
+                <% end %>
+            </div>
         <h6 style="color: white;"><%= link_to "Register", new_user_path%> </h6>
     </div>
+    

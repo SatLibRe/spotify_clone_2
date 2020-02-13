@@ -1,13 +1,19 @@
+ <% if flash.now[:message]%>
+    <h4 style="color: white;"> <%= flash.now[:message] %> </h4>
+    <%end%>
+    
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-<html style="background: black;">
-    <div style="text-align: center;">
-        <img style="margin-top: 10%; max-width: 100%; border: solid 2px; border-radius: 50%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS1YT2zmll5bU0qOfXz021FjUDOrg5Fz11gh18OXik9pL1olbcz" alt="">
-        <h5 style="color: white;"> <%= form_for @user do |f| %>
-            Name <%= f.text_field :name %>
-            Password  <%= f.password_field :password%>
-            <%= f.submit "Create New User" %>
-            <%end%>
-        </h5>
+
+    <div class="home-video-wrapper">
+        <%= video_tag "login_video.mp4", autoplay: :autoplay, loop: :loop, mute: :mute, class: "home_video"%>
+            <div class= "form_div" >
+                 <%= form_for @user do |f| %>
+                    <h6 style="color: white"> Name <%= f.text_field :name %> </h6>
+                    <h6 style="color: white"> Password  <%= f.password_field :password%> </h6>
+                    <%= f.submit "Create New User" %>
+                <%end%>
+            </div>
     </div>
 
 

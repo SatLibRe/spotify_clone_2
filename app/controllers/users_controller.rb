@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       redirect_to new_session_path
     else
       flash.now[:message] = "User name already exits"
-      render :new
+      render :new,:layout => false
     end
   
   end

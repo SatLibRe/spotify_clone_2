@@ -1,28 +1,24 @@
 <div container class="container"; style="text-align: center;">
-  <h1 style="margin-top: 10%;">
+  <h1 style="margin-top: 10%; padding-bottom: 5px;">
     <%= @user.name %>'s Profile
   </h1>
-   <div container class="container"; style="text-align: center;">
-      <img src=<%=@user.image%> style="width: 300px; border: solid; .5px; border-radius: 75%;"/>
+   <div container class="container"; style="text-align: center; padding-bottom: 25px;">
+      <img src=<%=@user.image%> style="width: 300px; border-radius: 75%;"/>
         <p><%=link_to "No image? Upload one here", edit_user_path(@user)%></p>
    </div>
 </div>
 
-<h3> 
-  Favorites 
-</h3>
+<h3 style="margin-left: 8%;"> Favorites </h3>
 
 <% if flash[:message] %>
   <h3 style="color: red"><%= flash[:message]%></h3>
 <% end %>
 
-
-
 <br>
 <br>
 
 <% @user.favorites.each do |fav|%>
- <table class="table" style= "table-layout: fixed;">
+ <table class="table" style= "table-layout: fixed; margin-left: 8%;">
    <thead>
     <tr>
       <th scope="col">Name</th>

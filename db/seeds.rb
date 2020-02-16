@@ -85,7 +85,6 @@ image_arr = [
 
 50.times { Artist.create(name: Faker::Music.band, age: rand(21..65), bio: Faker::Quote.famous_last_words, image: image_arr.sample) }
 
-User.create(name: "Miles", password: "123") 
 
 75.times { Song.create(name: Faker::Music.album, image: "image of sad", genre_id: Genre.all.sample.id, artist_id: Artist.all.sample.id) }
 
